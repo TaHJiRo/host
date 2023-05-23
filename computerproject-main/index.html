@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- <section id="slider">
+        <input type="radio" name="slider" id="s1">
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3" checked>
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+        <label for="s1" id="slide1"></label>
+        <label for="s2" id="slide2"></label>
+        <label for="s3" id="slide3">Доверься Кирпичу.
+            <br>
+            Сделай правильный выбор.
+        </label>
+        <label for="s4" id="slide4"></label>
+        <label for="s5" id="slide5"></label>
+    </section> -->
+    <br>
+    <button id="brick">Нажмите,чтобы начать операцию по созданию вашего личного кирпича.</button>
+    <br>
+    <hr id="hr">
+    <div id="wrap" style="display: none;">
+        <div id="processor">
+            <h4>Процессоры</h4>
+
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://images.satu.kz/160762624_drel-bezudarnaya-crown.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> Дрель</li>
+                                    <li><strong>Тип поставки: </strong> OEM</li>
+                                    <li><strong>Сокет: </strong> LGA 1151 v2</li>
+                                    <li><strong>Цена: </strong> 52 870 KZT</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Дрель', 52870,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://images.satu.kz/77741797_otvertka-torx-t8.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Отвертк</li>
+                                    <li><strong>Тип поставки: </strong> OEM</li>
+                                    <li><strong>Сокет: </strong> LGA1151</li>
+                                    <li><strong>Цена: </strong> 800 KZT</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Отвертка', 776567,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://img01.flagma.kz/photo/oboi-dlya-sten-v-almaty-2291840_big.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Обой</li>
+                                    <li><strong>Сокет: </strong> LGA 1151</li>
+                                    <li><strong>Цена: </strong> 15 000 KZT</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Обой', 15000,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://www.kz-tnp.kz/upload/iblock/4b2/4b214c2b4f6042be27fa710659820d53.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Пена клей</li>
+                                    <li><strong>Оперативная память: </strong> DDR4</li>
+                                    <li><strong>Сокет: </strong> LGA1151</li>
+                                    <li><strong>Цена: </strong> 8 000 KZT</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Пена клей', 8000,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://images.satu.kz/85398475_bolt-m1030mm.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Болты/li>
+                                    <li><strong>Сокет: </strong> AM4</li>
+                                    <li><strong>Размер:</strong> 16 х 22</li>
+                                    <li><strong>Цена: </strong> 400 KZT за 30 штук</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('болты', 400,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://images.satu.kz/137707766_rozetka-odinarnaya-vnutrennyaya.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Розетка</li>
+                                    <li><strong>Длина: </strong> 2м</li>
+                                    <li><strong>Сокет: </strong> AM4</li>
+                                    <li><strong>Цена: </strong> 1500 KZT</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Розетка', 1500,'Стройтельны приборы')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="mouse">
+            <h4>Мышки</h4>
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://img.bloody.com/ru/uploadfile/image/20200511/20200511083452_14608.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> A4tech</li>
+                                    <li><strong>Скорость: </strong> 1 мс</li>
+                                    <li><strong>Кнопка: </strong> 12</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 11 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('A4tech m', 11990,'Мышка')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://dlcdnrog.asus.com/rog/media/1490288296546.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> Asus</li>
+                                    <li><strong>Датчик: </strong> 7000 dpi</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 9 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('asusM', 9990,'Мышка')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://cdn1.dotesports.com/wp-content/uploads/2021/06/21171603/ergo-m575-gallery-off-white-1-1.png">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> Elecom</li>
+                                    <li><strong>Датчик: </strong> 7000 dpi</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 10 890</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('elecomM', 10890,'Мышка')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://m.media-amazon.com/images/I/611BRT7ly9L._AC_SL1500_.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> Logitech</li>
+                                    <li><strong>Датчик: </strong> 8000 dpi</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 13 490</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('LogitechM.', 13490,'Мышка')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://www.3ona51.com/images/products/gaming-mouses/razer-deathadder-v2-mini-rz01-03340100-r3m1/600.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong> Razer</li>
+                                    <li><strong>Датчик: </strong> 20 000 dpi</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 67 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('razerM', 67990,'Мышка')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="keyboard">
+            <h4>Клавиатура</h4>
+
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://assets.logitech.com/assets/65781/59/mx-keys.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>A4tech</li>
+                                    <li><strong>Габарита: </strong> 48.8x4x21 см</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 100 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 24 690</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('A4tech', 24690,'Клавиатура')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://dlcdnrog.asus.com/rog/media/1476457322108.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Asus</li>
+                                    <li><strong>Габарита: </strong> 48.8x4x21 см</li>
+                                    <li><strong>Вес: </strong> 84 г</li>
+                                    <li><strong>Ресурс клавиш: </strong> 100 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 23 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('asus', 23990,'Клавиатура')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6360/6360844_sd.jpg;maxHeight=640;maxWidth=550">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Logitech</li>
+                                    <li><strong>Длина шнура: </strong> 1.5м</li>
+                                    <li><strong>Размер: </strong> 454х21х155 мм.</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 4 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Logitech', 4990,'Клавиатура')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://static.razer.ru/168715/Razer-BlackWidow-2019-gallery06.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Razer</li>
+                                    <li><strong>Подсветка: </strong> RGB</li>
+                                    <li><strong>Размер: </strong> 454х21х155 мм.</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 16 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('razer', 16990,'Клавиатура')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://static.turbosquid.com/Preview/001288/867/5A/_600.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Reddragon</li>
+                                    <li><strong>Клавиша: </strong> 104</li>
+                                    <li><strong>Размер: </strong> 454х21х155 мм.</li>
+                                    <li><strong>Ресурс клавиш: </strong> 20 млн нажатий</li>
+                                    <li><strong>Цена: </strong> 21 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Reddragon', 21990,'Клавиатура')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ram">
+            <h4>RAM</h4>
+
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://hyperpc.ru/images/catalog/hardware/memory/g-skill/tridient-z-rgb/g-skill-trident-z-rgb-32gb.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>G.Skill</li>
+                                    <li><strong>Поддержка тактовой частоты: </strong> 3000 МГц</li>
+                                    <li><strong>Обьем: </strong> 16 ГБ</li>
+                                    <li><strong>Пропускная способность: </strong> PC24000</li>
+                                    <li><strong>Цена: </strong> 33 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('G.Skill', 33990,'Оперативная память')">Добавить
+                                    в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://c.dns-shop.ru/thumb/st1/fit/760/600/9491b2ccef2086d288f1944076ae37b3/q93_08168a5635f01260457588bb65d5aa177fff10d35af448466eb9fa6b13db69f3.png">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Kingston HyperX</li>
+                                    <li><strong>Поддержка тактовой частоты: </strong> 2666 МГц</li>
+                                    <li><strong>Высота модуля: </strong> 34.1 мм</li>
+                                    <li><strong>Пропускная способность: </strong> 21300 МБ/с.</li>
+                                    <li><strong>Цена: </strong> 22 990</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('Kingston HyperX', 22990,'Оперативная память')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://cdn.mos.cms.futurecdn.net/ih5J3RzySPvYLpLFGkQzzN.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Oloy</li>
+                                    <li><strong>Поддержка тактовой частоты: </strong> 2666 МГц</li>
+                                    <li><strong>Высота модуля: </strong> 34.1 мм</li>
+                                    <li><strong>Пропускная способность: </strong> 21300 МБ/с.</li>
+                                    <li><strong>Цена: </strong> 61 990</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('Kingston HyperX', 61990,'Оперативная память')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://cdn2.techbang.com/system/excerpt_images/90685/post_inpage/405667e30f767a735db6eba1c0ef7a9f.jpg?1634089893">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Microne</li>
+                                    <li><strong>Поддержка тактовой частоты: </strong> 2666 МГц</li>
+                                    <li><strong>Высота модуля: </strong> 34.1 мм</li>
+                                    <li><strong>Пропускная способность: </strong> 21300 МБ/с.</li>
+                                    <li><strong>Цена: </strong> 58 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Microne', 58000,'Оперативная память')">Добавить
+                                    в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/x/g/xg_5_1_1.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Модуль:</strong>ThermalTake</li>
+                                    <li><strong>Поддержка тактовой частоты: </strong> 2666 МГц</li>
+                                    <li><strong>Высота модуля: </strong> 34.1 мм</li>
+                                    <li><strong>Пропускная способность: </strong> 21300 МБ/с.</li>
+                                    <li><strong>Цена: </strong> 66 990</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('ThermalTake', 66990,'Оперативная память')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="monitor">
+            <h4>Мониторы</h4>
+
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://cdn1.ozone.ru/s3/multimedia-9/c1200/6036801621.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Модeль:</strong>Asus</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 130 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('asus', 25000,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://frankfurt.apollo.olxcdn.com/v1/files/w4fdi2y95kvf3-KZ/image;s=644x461">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>HP</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 150 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('hp', 150990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://www.lg.com/ru/images/computer-products/features/MNT-38GN950-09-02-2-Sphere-Lighting-Video-Sync.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>LG</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 244 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('lg', 244990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://media.istockphoto.com/photos/computer-lcd-monitor-blank-screen-simple-plasma-tv-set-picture-id1180725391?k=20&m=1180725391&s=612x612&w=0&h=_ly1diIHNHNQkKT24BIXzz-eoSeWKqiEjsO4cR8BCRc=">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Philips</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 179 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('philips', 179990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://images.samsung.com/is/image/samsung/kz-ru-odyssey-g5-g55t-lc27g55tqwixci-frontblack-316742992?$720_576_PNG$">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Samsung</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 216 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('samsung', 216990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://img3.goodfon.com/wallpaper/nbig/4/92/monitor-samsung-black-chernyy.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Samsung</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 167 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('samsung', 167990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://xiacom.ru/upload/ammina.optimizer/png-webp/q80/upload/medialibrary/34c/a25/content-img.webp">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>xiaomi</li>
+                                    <li><strong>Дисплей: </strong> 23.8-дюймовый</li>
+                                    <li><strong>Частота обновления: </strong> 165 Гц</li>
+                                    <li><strong>Технология: </strong> Adaptive-Sync (FreeSync)</li>
+                                    <li><strong>Цена: </strong> 132 990</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('xiaomi', 132990,'Монитор')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="system">
+            <h4>Оперативная система</h4>
+
+            <div class="bigsection">
+                <div class="threecolumns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://besthqwallpapers.com/Uploads/25-5-2019/93591/thumb2-android-stone-logo-black-stone-background-android-creative-grunge.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Android</li>
+                                    <li><strong>Файловые системы: </strong>Ext2, Ext3, Ext4</li>
+                                    <li><strong>Дата выпуска: </strong> 23 сентября 2008 г.</li>
+                                    <li><strong>Цена: </strong> 50 390</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('Android', 50390,'Операционная система')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://www.meme-arsenal.com/memes/3e67e5a1073358bb9cfd700f29c78d94.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>Linux</li>
+                                    <li><strong>Файловые системы: </strong>DOS и OS/2</li>
+                                    <li><strong>Дата выпуска: </strong> 17 сентября, 1991 г.</li>
+                                    <li><strong>Цена: </strong> 12 749</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('Linux', 12749,'Операционная система')">Добавить
+                                    в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://w0.peakpx.com/wallpaper/566/560/HD-wallpaper-mac-os-apple-macintosh-widescreen-os-black-cool-logo-new-white-thumbnail.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>MacOS</li>
+                                    <li><strong>Файловые системы: </strong>Apple Computer Inc.</li>
+                                    <li><strong>Дата выпуска: </strong> 24 марта 2001 г.</li>
+                                    <li><strong>Цена: </strong> 77 390</li>
+                                </ul>
+                                <button class="add" onclick="addToCart('MacOS', 77390,'Операционная система')">Добавить
+                                    в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img src="https://g-ek.com/assets/images/startup/windows-logo.jpg">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>WINDOWS 10</li>
+                                    <li><strong>Файловые системы: </strong>FAT, FAT32, exFAT, NTFS и ReFS.</li>
+                                    <li><strong>Дата выпуска: </strong> 29 июля 2015 г.</li>
+                                    <li><strong>Цена: </strong> 28 315</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('WINDOWS 10', 28315,'Операционная система')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containersec">
+                        <div class="product-image">
+                            <img
+                                src="https://www.iguides.ru/upload/medialibrary/902/9020c0c3e8e43ad425ef7f92c1f8fc17.png">
+                            <div class="info">
+                                <h2>Описание:</h2>
+                                <ul>
+                                    <li><strong>Название:</strong>WINDOWS 7</li>
+                                    <li><strong>Файловые системы: </strong> NTFS</li>
+                                    <li><strong>Дата выпуска: </strong> 22 октября 2009 г.</li>
+                                    <li><strong>Цена: </strong> 18 780</li>
+                                </ul>
+                                <button class="add"
+                                    onclick="addToCart('WINDOWS 7', 18780,'Операционная система')">Добавить в
+                                    корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <hr>
+        <button id="submitbutton" style="display: block;">Оформить заказ</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
